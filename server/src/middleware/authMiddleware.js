@@ -14,7 +14,7 @@ export const protect=async(req,res,next)=>{
         const secret=process.env.JWT_SECRET
         const decoded=verifyToken(token,secret)
         console.log(decoded)
-        const user=await User.findById(decoded._id).select("-password")
+        const user=await User.findById(decoded.id).select("-password")
         req.user=user
         next()
     } catch (error) {
