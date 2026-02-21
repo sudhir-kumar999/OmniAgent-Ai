@@ -9,6 +9,7 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import Navbar from "./components/Navbar";
 import ChatPage from "./pages/ChatPage";
 import TodoPage from "./todo/TodoPage";
+import TodoItem from "./todo/TodoItem";
 
 // Future pages (abhi bana sakte ho blank)
 // import ChatPage from "./pages/ChatPage";
@@ -34,26 +35,49 @@ function App() {
               </ProtectedRoute>
             }
           />
-          <Route path="/dashboard/chat" element={<ChatPage />} />
-          <Route path="/dashboard/todo" element={<TodoPage />} />
+          <Route
+  path="/dashboard/chat"
+  element={
+    <ProtectedRoute>
+      <ChatPage />
+    </ProtectedRoute>
+  }
+/>
 
-          {/* <Route
+<Route
+  path="/dashboard/todo"
+  element={
+    <ProtectedRoute>
+      <TodoPage />
+    </ProtectedRoute>
+  }
+/>
+
+          <Route
             path="/assistant"
             element={
               <ProtectedRoute>
                 <ChatPage />
               </ProtectedRoute>
             }
-          /> */}
+          />
 
-          {/* <Route
+          <Route
             path="/todo"
             element={
               <ProtectedRoute>
                 <TodoPage />
               </ProtectedRoute>
             }
-          /> */}
+          />
+          <Route
+            path="/todo/items"
+            element={
+              <ProtectedRoute>
+                <TodoItem />
+              </ProtectedRoute>
+            }
+          />
 
           {/* Default Redirect */}
           <Route path="/" element={<Navigate to="/login" />} />

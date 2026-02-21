@@ -3,6 +3,7 @@ import Chat from "../models/Chat.js";
 import { v4 as uuidv4 } from "uuid";
 
 export const chatWithAgent = async (req, res) => {
+  console.log("agentr run")
   const { userId, sessionId, message } = req.body;
   try {
     let chat = await Chat.findOne({ userId, sessionId });
@@ -17,7 +18,7 @@ export const chatWithAgent = async (req, res) => {
       role: "user",
       parts: [{ text: message }],
     });
-    const { reply, updatedHistory } = await runAgent(chat.history);
+    const { reply, updatedHistory } = await runAgent(chat.history,req.user);
 
     chat.history = updatedHistory;
 

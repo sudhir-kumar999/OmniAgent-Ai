@@ -1,16 +1,16 @@
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "../context/AuthContext";
+// import { useAuth } from "../context/AuthContext";
 
 export default function Dashboard() {
 
   const navigate = useNavigate();
-  const { logout } = useAuth();
+//   const { logout } = useAuth();
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-950 via-gray-900 to-black text-white">
+    <div className="min-h-screen bg-gradient-to-br from-gray-950 via-gray-900 to-black text-white pt-5">
 
       {/* Top Navbar */}
-      <div className="flex justify-between items-center px-10 py-6 border-b border-gray-800">
+      {/* <div className="flex justify-between items-center px-10 py-6 border-b border-gray-800">
         <h1 className="text-2xl font-bold tracking-wide">
           OmniAgent AI
         </h1>
@@ -21,7 +21,7 @@ export default function Dashboard() {
         >
           Logout
         </button>
-      </div>
+      </div> */}
 
       {/* Hero Section */}
       <div className="text-center py-16 px-6">

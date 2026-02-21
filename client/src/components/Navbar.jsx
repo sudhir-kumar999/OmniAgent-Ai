@@ -106,7 +106,7 @@ export default function Navbar() {
                   </Link>
 
                   <Link
-                    to="/todo"
+                    to="/todo/items"
                     onClick={() => setIsOpen(false)}
                   >
                     Todo

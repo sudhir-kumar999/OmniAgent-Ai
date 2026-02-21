@@ -15,7 +15,7 @@ function ChatPage() {
     const userMessage = { role: "user", content: text };
     setMessages((prev) => [...prev, userMessage]);
 
-    const res = await API.post("/", {
+    const res = await API.post("/agent/run", {
       userId,
       sessionId,
       message: text,
@@ -34,7 +34,6 @@ function ChatPage() {
 
   return (
     <div className="flex h-screen bg-gray-100">
-      
       {/* Mobile Overlay */}
       {sidebarOpen && (
         <div
@@ -51,15 +50,11 @@ function ChatPage() {
           md:translate-x-0 transition-transform duration-300 ease-in-out
         `}
       >
-        <Sidebar
-          loadUserChats={loadUserChats}
-          setMessages={setMessages}
-        />
+        <Sidebar loadUserChats={loadUserChats} setMessages={setMessages} />
       </div>
 
       {/* Main Chat Area */}
       <div className="flex-1 flex flex-col">
-
         {/* Top Navbar (Mobile Only) */}
         <div className="md:hidden flex items-center justify-between p-4 bg-white shadow">
           <button onClick={() => setSidebarOpen(true)}>
