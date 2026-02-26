@@ -11,6 +11,7 @@ import ChatPage from "./pages/ChatPage";
 import TodoPage from "./todo/TodoPage";
 import TodoItem from "./todo/TodoItem";
 import RagLayout from "./notebook/RagLayout";
+import NotFound from "./components/NotFound";
 
 
 
@@ -92,6 +93,7 @@ function App() {
 
           {/* 404 Route */}
           <Route path="*" element={<h2>Page Not Found</h2>} />
+        <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
   );
