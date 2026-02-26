@@ -9,10 +9,11 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import Navbar from "./components/Navbar";
 import ChatPage from "./pages/ChatPage";
 import TodoPage from "./todo/TodoPage";
+import TodoItem from "./todo/TodoItem";
+import RagLayout from "./notebook/RagLayout";
+import NotFound from "./components/NotFound";
 
-// Future pages (abhi bana sakte ho blank)
-// import ChatPage from "./pages/ChatPage";
-// import TodoPage from "./pages/TodoPage";
+
 
 function App() {
   return (
@@ -34,32 +35,65 @@ function App() {
               </ProtectedRoute>
             }
           />
-          <Route path="/dashboard/chat" element={<ChatPage />} />
-          <Route path="/dashboard/todo" element={<TodoPage />} />
+          <Route
+  path="/dashboard/chat"
+  element={
+    <ProtectedRoute>
+      <ChatPage />
+    </ProtectedRoute>
+  }
+/>
 
-          {/* <Route
+<Route
+  path="/dashboard/todo"
+  element={
+    <ProtectedRoute>
+      <TodoPage />
+    </ProtectedRoute>
+  }
+/>
+
+<Route
+            path="/dashboard/notebook"
+            element={
+              <ProtectedRoute>
+                <RagLayout />
+              </ProtectedRoute>
+            }
+          />
+
+          <Route
             path="/assistant"
             element={
               <ProtectedRoute>
                 <ChatPage />
               </ProtectedRoute>
             }
-          /> */}
+          />
 
-          {/* <Route
+          <Route
             path="/todo"
             element={
               <ProtectedRoute>
                 <TodoPage />
               </ProtectedRoute>
             }
-          /> */}
+          />
+          <Route
+            path="/todo/items"
+            element={
+              <ProtectedRoute>
+                <TodoItem />
+              </ProtectedRoute>
+            }
+          />
 
           {/* Default Redirect */}
           <Route path="/" element={<Navigate to="/login" />} />
 
           {/* 404 Route */}
           <Route path="*" element={<h2>Page Not Found</h2>} />
+        <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
   );

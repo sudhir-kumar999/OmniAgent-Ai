@@ -1,16 +1,14 @@
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "../context/AuthContext";
+// import { useAuth } from "../context/AuthContext";
 
 export default function Dashboard() {
-
   const navigate = useNavigate();
-  const { logout } = useAuth();
+  //   const { logout } = useAuth();
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-950 via-gray-900 to-black text-white">
-
+    <div className=" min-h-screen bg-gradient-to-br from-gray-950 via-gray-900 to-black text-white pt-5">
       {/* Top Navbar */}
-      <div className="flex justify-between items-center px-10 py-6 border-b border-gray-800">
+      {/* <div className="flex justify-between items-center px-10 py-6 border-b border-gray-800">
         <h1 className="text-2xl font-bold tracking-wide">
           OmniAgent AI
         </h1>
@@ -21,7 +19,7 @@ export default function Dashboard() {
         >
           Logout
         </button>
-      </div>
+      </div> */}
 
       {/* Hero Section */}
       <div className="text-center py-16 px-6">
@@ -29,22 +27,44 @@ export default function Dashboard() {
           Autonomous AI Productivity Platform
         </h2>
         <p className="text-gray-400 max-w-2xl mx-auto">
-          Intelligent multi-tool AI agent combined with voice-powered autonomous task automation.
+          Intelligent multi-tool AI agent combined with voice-powered autonomous
+          task automation.
         </p>
       </div>
 
       {/* Feature Cards */}
       <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-10 pb-20">
+        {/* {NOTEBOOK LLM card} */}
+        <div className="bg-gray-900 p-8 rounded-3xl shadow-2xl hover:scale-105 transition duration-300 border border-gray-800">
+          <h3 className="text-2xl font-semibold mb-4">📓 Notebook LLM</h3>
+
+          <ul className="text-gray-400 space-y-3 mb-6">
+            <li>• Chat with your documents (PDF, Notes, Text)</li>
+            <li>• AI-powered knowledge understanding</li>
+            <li>• Context-aware question answering</li>
+            <li>• Smart document summarization</li>
+            <li>• Persistent chat memory per notebook</li>
+            <li>• Ready for RAG & semantic search integration</li>
+          </ul>
+
+          <button
+            onClick={() => navigate("/dashboard/notebook")}
+            className="w-full bg-purple-600 py-3 rounded-xl hover:bg-purple-700 transition"
+          >
+            Open Notebook LLM
+          </button>
+        </div>
 
         {/* AI Agent Card */}
         <div className="bg-gray-900 p-8 rounded-3xl shadow-2xl hover:scale-105 transition duration-300 border border-gray-800">
-
           <h3 className="text-2xl font-semibold mb-4">
             🤖 AI Autonomous Agent
           </h3>
 
           <ul className="text-gray-400 space-y-3 mb-6">
-            <li>• Multi-tool orchestration (Weather, Crypto, PDF, YouTube, etc.)</li>
+            <li>
+              • Multi-tool orchestration (Weather, Crypto, PDF, YouTube, etc.)
+            </li>
             <li>• Gemini 2.5 Flash tool-calling architecture</li>
             <li>• Autonomous decision-making logic</li>
             <li>• Dynamic tool registry execution</li>
@@ -62,7 +82,6 @@ export default function Dashboard() {
 
         {/* Autonomous Todo Card */}
         <div className="bg-gray-900 p-8 rounded-3xl shadow-2xl hover:scale-105 transition duration-300 border border-gray-800">
-
           <h3 className="text-2xl font-semibold mb-4">
             🧠 Autonomous Todo System
           </h3>
@@ -76,16 +95,23 @@ export default function Dashboard() {
             <li>• Future backend persistence ready</li>
           </ul>
 
-          <button
-            onClick={() => navigate("/dashboard/todo")}
-            className="w-full bg-green-600 py-3 rounded-xl hover:bg-green-700 transition"
+          <div className="flex flex-wrap justify-between gap-4"
           >
-            Open Todo Manager
-          </button>
+            <button
+              onClick={() => navigate("/dashboard/todo")}
+              className=" bg-green-600 py-3 px-2 rounded-xl hover:bg-green-700 transition"
+            >
+              Autonomous Todo 
+            </button>
+            <button
+              onClick={() => navigate("/todo/items")}
+              className=" bg-green-600 py-3 px-2 rounded-xl hover:bg-green-700 transition"
+            >
+              Saved Todos
+            </button>
+          </div>
         </div>
-
       </div>
-
     </div>
   );
 }

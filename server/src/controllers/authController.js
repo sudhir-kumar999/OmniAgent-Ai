@@ -34,7 +34,6 @@ export const register = async (req, res) => {
       success: true,
       message: "User registered successfully",
     });
-
   } catch (error) {
     console.log("Register Error:", error);
     return res.json({
@@ -47,7 +46,7 @@ export const register = async (req, res) => {
 export const login = async (req, res) => {
   try {
     const { email, password } = req.body;
-    console.log(email,password)
+    console.log(email, password);
 
     if (!email || !password) {
       return res.json({
@@ -64,13 +63,10 @@ export const login = async (req, res) => {
         message: "No user found. Please register.",
       });
     }
-console.log("Entered password:", password);
-console.log("Stored hashed:", user.password);
+    console.log("Entered password:", password);
+    console.log("Stored hashed:", user.password);
 
-    const isMatch = await bcrypt.compare(
-      password.trim(),
-      user.password
-    );
+    const isMatch = await bcrypt.compare(password.trim(), user.password);
 
     if (!isMatch) {
       return res.json({
@@ -83,21 +79,20 @@ console.log("Stored hashed:", user.password);
 
     res.cookie("accessToken", token, {
       httpOnly: true,
-      secure: false,
-      sameSite: "lax",
-      maxAge: 24 * 60 * 60 * 1000,
+      secure: process.env.NODE_ENV === "production",
+      sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
+      maxAge: 24 * 60 * 60 * 1000, // 1 day
     });
 
     return res.json({
       success: true,
       message: "Login successful",
       user: {
-    id: user._id,
-    name: user.name,
-    email: user.email
-  }
+        id: user._id,
+        name: user.name,
+        email: user.email,
+      },
     });
-
   } catch (error) {
     console.log("Login Error:", error);
     return res.json({
@@ -105,6 +100,18 @@ console.log("Stored hashed:", user.password);
       message: "Server error during login",
     });
   }
+};
+
+export const logout = (req, res) => {
+  res.clearCookie("accessToken", {
+    httpOnly: true,
+    secure: process.env.NODE_ENV === "production",
+    sameSite:
+      process.env.NODE_ENV === "production" ? "none" : "lax",
+    path: "/",
+  });
+
+  res.json({ success: true });
 };
 
 export const dashboard = (req, res) => {

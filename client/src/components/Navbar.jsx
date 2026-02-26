@@ -39,7 +39,7 @@ export default function Navbar() {
             {user && (
               <>
                 <Link to="/dashboard">Dashboard</Link>
-                <Link to="/assistant">Assistant</Link>
+                <Link to="/dashboard/chat">Assistant</Link>
                 <Link to="/todo">Todo</Link>
               </>
             )}
@@ -99,14 +99,14 @@ export default function Navbar() {
                   </Link>
 
                   <Link
-                    to="/assistant"
+                    to="/dashboard/chat"
                     onClick={() => setIsOpen(false)}
                   >
                     Assistant
                   </Link>
 
                   <Link
-                    to="/todo"
+                    to="/todo/items"
                     onClick={() => setIsOpen(false)}
                   >
                     Todo
