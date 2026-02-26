@@ -8,7 +8,10 @@ const app = express();
 // app.use(cors())
 app.use(
   cors({
-    origin: "http://localhost:5173", // React Vite default port
+    origin: [
+      "http://localhost:5173",
+      "https://omniagent-ai-front.onrender.com",
+    ],
     credentials: true,
   })
 );
