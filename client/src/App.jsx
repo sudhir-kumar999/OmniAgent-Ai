@@ -92,7 +92,7 @@ function App() {
           <Route path="/" element={<Navigate to="/login" />} />
 
           {/* 404 Route */}
-          <Route path="*" element={<h2>Page Not Found</h2>} />
+          {/* <Route path="*" element={<h2>Page Not Found</h2>} /> */}
         <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
