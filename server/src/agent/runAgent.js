@@ -26,6 +26,10 @@ export async function runAgent(history,user) {
   userId: user?._id,
 });
 
+// const result=await toolFunctions[name](args, {
+//   userId: user?._id,
+// });
+
 
       // Push model's function call
       history.push({

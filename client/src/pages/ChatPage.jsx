@@ -20,7 +20,7 @@ function ChatPage() {
       sessionId,
       message: text,
     });
-
+    console.log(userId)
     setSessionId(res.data.sessionId);
 
     const botMessage = { role: "assistant", content: res.data.reply };

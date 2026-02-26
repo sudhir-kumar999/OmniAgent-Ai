@@ -10,6 +10,7 @@ import Navbar from "./components/Navbar";
 import ChatPage from "./pages/ChatPage";
 import TodoPage from "./todo/TodoPage";
 import TodoItem from "./todo/TodoItem";
+import RagLayout from "./notebook/RagLayout";
 
 // Future pages (abhi bana sakte ho blank)
 // import ChatPage from "./pages/ChatPage";
@@ -52,6 +53,15 @@ function App() {
     </ProtectedRoute>
   }
 />
+
+<Route
+            path="/dashboard/notebook"
+            element={
+              <ProtectedRoute>
+                <RagLayout />
+              </ProtectedRoute>
+            }
+          />
 
           <Route
             path="/assistant"

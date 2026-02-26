@@ -19,7 +19,7 @@ app.use(express.json());
 // app.get("/", (req, res) => {
 //   res.send("hello");
 // });
-app.use("/api/agent",routers)
+app.use("/api/agent", routers);
 app.use("/api/auth", router);
 app.use("/api/chat", routers);
 
