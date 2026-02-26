@@ -1,13 +1,16 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "http://localhost:5000/api",
+  // baseURL: "http://localhost:5000/api",
+  baseURL:"https://omniagent-ai.onrender.com",
   withCredentials: true // 🔥 VERY IMPORTANT
 
 });
 
 export const api = axios.create({
-  baseURL: "http://localhost:5000/api",
+  // baseURL: "http://localhost:5000/api",
+  baseURL:"https://omniagent-ai.onrender.com",
+
   withCredentials: true // 🔥 VERY IMPORTANT
 });
 
