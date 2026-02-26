@@ -6,6 +6,7 @@ import routers from "./src/routes/chatRoutes.js";
 const app = express();
 
 // app.use(cors())
+app.set("trust proxy", 1);
 app.use(
   cors({
     origin: [
