@@ -12,9 +12,7 @@ import TodoPage from "./todo/TodoPage";
 import TodoItem from "./todo/TodoItem";
 import RagLayout from "./notebook/RagLayout";
 
-// Future pages (abhi bana sakte ho blank)
-// import ChatPage from "./pages/ChatPage";
-// import TodoPage from "./pages/TodoPage";
+
 
 function App() {
   return (
