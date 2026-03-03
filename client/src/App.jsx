@@ -12,6 +12,7 @@ import TodoPage from "./todo/TodoPage";
 import TodoItem from "./todo/TodoItem";
 import RagLayout from "./notebook/RagLayout";
 import NotFound from "./components/NotFound";
+import AgentChat from "./pages/AgentChat";
 
 
 
@@ -84,6 +85,14 @@ function App() {
             element={
               <ProtectedRoute>
                 <TodoItem />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/agent"
+            element={
+              <ProtectedRoute>
+                <AgentChat/>
               </ProtectedRoute>
             }
           />

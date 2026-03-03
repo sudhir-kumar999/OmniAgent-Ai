@@ -35,6 +35,23 @@ export const toolDeclarations = [
 
 
 
+      {
+        name: "browser_search",
+        description: "Search the internet for real-time information",
+        parameters: {
+          type: "object",
+          properties: {
+            query: {
+              type: "string",
+              description: "Search query"
+            }
+          },
+          required: ["query"]
+        }
+      },
+    
+  
+
 
 
   {

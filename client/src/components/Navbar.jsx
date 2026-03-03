@@ -41,6 +41,8 @@ export default function Navbar() {
                 <Link to="/dashboard">Dashboard</Link>
                 <Link to="/dashboard/chat">Assistant</Link>
                 <Link to="/todo">Todo</Link>
+                <Link to="/agent">Browser Agent</Link>
+
               </>
             )}
 
@@ -110,6 +112,13 @@ export default function Navbar() {
                     onClick={() => setIsOpen(false)}
                   >
                     Todo
+                  </Link>
+
+                  <Link
+                    to="/agent"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    Browser Agent
                   </Link>
                 </>
               )}
