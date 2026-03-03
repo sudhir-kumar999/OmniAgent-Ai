@@ -55,6 +55,31 @@ export default function Dashboard() {
           </button>
         </div>
 
+
+
+
+        {/* browser agent */}
+
+        <div className="bg-gray-900 p-8 rounded-3xl shadow-2xl hover:scale-105 transition duration-300 border border-gray-800">
+  <h3 className="text-2xl font-semibold mb-4">🌐 Browser Agent</h3>
+
+  <ul className="text-gray-400 space-y-3 mb-6">
+    <li>• Real-time internet search capability</li>
+    <li>• Live news, pricing & trend retrieval</li>
+    <li>• AI-powered web result summarization</li>
+    <li>• Dynamic research assistant</li>
+    <li>• Smart tool-based function calling</li>
+    <li>• Built with Gemini + SerpAPI integration</li>
+  </ul>
+
+  <button
+    onClick={() => navigate("/dashboard/browser")}
+    className="w-full bg-blue-600 py-3 rounded-xl hover:bg-blue-700 transition"
+  >
+    Open Browser Agent
+  </button>
+</div>
+
         {/* AI Agent Card */}
         <div className="bg-gray-900 p-8 rounded-3xl shadow-2xl hover:scale-105 transition duration-300 border border-gray-800">
           <h3 className="text-2xl font-semibold mb-4">

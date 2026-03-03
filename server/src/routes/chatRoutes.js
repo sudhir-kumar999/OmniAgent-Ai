@@ -10,6 +10,7 @@ import {
   getTodos,
   getTodosController,
 } from "../tools/todoTools.js";
+import router from "./authRoutes.js";
 
 const routers = express.Router();
 
@@ -18,6 +19,7 @@ routers.get("/user/:userId", protect, getUserChats);
 routers.get("/session/:sessionId", protect, getSingleChat);
 routers.get("/todo", protect, getTodosController);
 routers.get("/todo", protect, getTodos);
+// router.post("/query",protect,)
 
 routers.delete("/todo/:id", protect, deleteTodoController);
 
