@@ -73,7 +73,7 @@ export default function Dashboard() {
   </ul>
 
   <button
-    onClick={() => navigate("/dashboard/browser")}
+    onClick={() => navigate("/agent")}
     className="w-full bg-blue-600 py-3 rounded-xl hover:bg-blue-700 transition"
   >
     Open Browser Agent
